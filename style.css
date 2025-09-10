@@ -1,0 +1,215 @@
+/* === BASIC RESET & GLOBAL STYLES === */
+:root {
+    --primary-color: #1e90ff; /* Biru terang untuk aksen */
+    --sidebar-bg: #040b14;
+    --main-bg: #0c1523;
+    --text-color: #ffffff;
+    --secondary-text: #a8a9b4;
+    --sidebar-width: 300px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    /* Efek scroll yang mulus saat menu diklik */
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--main-bg);
+    color: var(--text-color);
+    position: relative;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+}
+
+h2 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+}
+
+section {
+    padding: 60px 30px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* === SIDEBAR (NAVIGASI KIRI) === */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: var(--sidebar-width);
+    height: 100vh;
+    background-color: var(--sidebar-bg);
+    padding: 30px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-right: 2px solid var(--primary-color);
+}
+
+.profile-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 5px solid var(--primary-color);
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+.sidebar h1 {
+    color: var(--text-color);
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.social-links a {
+    color: var(--secondary-text);
+    font-size: 1.2rem;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: var(--primary-color);
+}
+
+.nav-menu {
+    list-style: none;
+    margin-top: 30px;
+    width: 100%;
+}
+
+.nav-menu li a {
+    display: flex;
+    align-items: center;
+    padding: 12px 15px;
+    margin-bottom: 8px;
+    color: var(--secondary-text);
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    border-radius: 50px;
+}
+
+.nav-menu li a i {
+    margin-right: 15px;
+    font-size: 1.3rem;
+}
+
+.nav-menu li a:hover, .nav-menu li a.active {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+}
+
+/* === MAIN CONTENT (KONTEN KANAN) === */
+.main-content {
+    margin-left: var(--sidebar-width);
+}
+
+/* === HOME SECTION === */
+#home {
+    background: linear-gradient(rgba(12, 21, 35, 0.8), rgba(12, 21, 35, 0.8)), url('https://source.unsplash.com/1600x900/?developer,coding') no-repeat center center;
+    background-size: cover;
+    text-align: center;
+}
+
+#home h1 {
+    font-size: 4rem;
+    margin: 0;
+}
+
+#home p {
+    font-size: 1.8rem;
+    color: var(--secondary-text);
+}
+
+.typing-container {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+.cursor {
+    display: inline-block;
+    width: 3px;
+    height: 2.2rem;
+    background-color: var(--primary-color);
+    animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* === ABOUT ME & OTHER SECTIONS === */
+.about-content p, .section-content p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--secondary-text);
+    max-width: 800px;
+}
+
+.skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 20px;
+    max-width: 800px;
+}
+
+.skill-item {
+    background-color: #1a2942;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 1rem;
+    border-left: 3px solid var(--primary-color);
+}
+
+/* === RESPONSIVE DESIGN === */
+@media (max-width: 992px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        border-right: none;
+        border-bottom: 2px solid var(--primary-color);
+    }
+    .main-content {
+        margin-left: 0;
+    }
+    section {
+        min-height: calc(100vh - 100px); /* Adjust height for smaller screens */
+    }
+    #home h1 {
+        font-size: 3rem;
+    }
+    #home p, .typing-container {
+        font-size: 1.5rem;
+    }
+}
+
+/* === GARIS BATAS ANTAR SECTION (GAYA GRADASI) === */
+section:not(:last-child) {
+    border-bottom: 2px solid;
+    border-image: linear-gradient(to right, 
+        rgba(30, 144, 255, 0), 
+        rgba(30, 144, 255, 1), 
+        rgba(30, 144, 255, 0)) 1;
+    border-image-slice: 1;
+}
