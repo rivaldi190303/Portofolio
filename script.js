@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
     let wordIndex = 0;
     let charIndex = 0;
     let isDeleting = false;
-
+  
     // Cek jika elemen typing-text ada sebelum menjalankan fungsi
     if (typingText) {
         function type() {
