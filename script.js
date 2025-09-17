@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
 
-    // --- Efek Mengetik (Typing Effect) ---
+// --- Efek Mengetik (Typing Effect) ---
     const typingText = document.getElementById('typing-text');
     const words = ["Engineer", "Programmer", "Tech Geek", "Problem Solver"];
     let wordIndex = 0;
